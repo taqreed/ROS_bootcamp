@@ -96,3 +96,68 @@ It display messages published to a topic.
 ### 4.Rosmsg show:
 
 It is a command-line tool for displaying information about ROS Message types.
+ASSIGNMENT 3
+
+
+
+## 1,a. What is the ROS navigation stack?
+
+- A  navigation stack that takes in information from odometry, sensor streams, and a goal pose and outputs safe velocity commands that are sent to a mobile base.
+- Map provided by a Map Server. Each module is a node. Planner has a layered architecture . Obstacle sensing refined on-line by appropriate modules .
+
+## b. What is localization? What sensors are used for localization?
+
+- Localization is a way to determine the location of sensor nodes.
+
+- It determine the current robot position, the measurements up to the current instant and a map.
+
+- The important function of a sensor network is to collect and forward data to destination. 
+
+- This kind of information can be obtained using localization technique in wireless sensor networks (WSNs). 
+
+- Interoceptive sensors, like wheel odometers and IMUs, generate relative position measurements.
+
+- Exteroceptive sensors, including cameras and lasers, provide absolute position measurements.
+
+- *Acoustic Sensors* use the Time of Flight  technique to measure location.
+
+- *Laser Rangefinders* also use TOF and phase-shift techniques to measure position.
+
+- *Visual Sensors* are mainly three types: monocular cameras, stereo cameras, and RGB-D cameras.
+
+      c. what is the meaning of  mapping?
+
+     * process of modelling the robot environment using sensor data.
+
+     * Given a robot that has a perfect ego- estimate of the position, and a sequence of measurements, determine the map of the environment. 
+
+     * A perfect estimate of the robot pose is usually not available. 
+
+     * Instead we solve a more complex problem: Simultaneous Localization and Mapping (SLAM).
+
+          d. what is tf in ros and why is it needed?
+
+          * tf is a package that lets the user keep track of multiple coordinate frames over time. 
+
+          * tf maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
+
+               e. what is the SLAM problem?
+
+               GIVEN
+
+               * the robots controls 
+
+                        u1:T={u1,u2,u3......uT}
+
+               * observations
+
+                        z1:T={z1,z2,z3.......zT}
+
+                       WANTED
+
+                       * map of the environment
+
+                          m
+
+                         * path of the robot       
+                          x0:T={x0,x1,x2..,xT}
