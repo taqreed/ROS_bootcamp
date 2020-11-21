@@ -161,3 +161,48 @@ ASSIGNMENT 3
 
                          * path of the robot       
                           x0:T={x0,x1,x2..,xT}
+
+
+
+
+ Assignment 4
+
+a. AMCL 
+
+Adaptive Monte Carlo Localization (AMCL)
+
+- we are using the amcl algorithm for the localization. 
+- amcl is a probabilistic localization system for a robot moving in 2D. 
+- This system implements the adaptive Monte Carlo localization approach, which uses a particle filter to track the pose of a robot against a known map.
+
+- The amcl node works mainly with laser scans and laser maps, but it could be extended to work with other sensor data, such as a sonar or stereo .
+
+ b. GMapping 
+
+- The gmapping package provides laser-based SLAM (Simultaneous Localization and Mapping), as a ROS node called slam_gmapping.
+- Using slam_gmapping, we can create a 2-D occupancy grid map (like a building floorplan) from laser and pose data collected by a mobile robot.
+
+ c. RRT Path Planning 
+
+- A rapidly exploring random tree (RRT) is an algorithm designed to efficiently search nonconvex, high-dimensional spaces by randomly building a space-filling tree.
+- RRT works by creating two trees: one with a root at the starting position and the other with a root at the ending position.
+-  The trees then alternate roles with one adding a node and then the other trying to connect to it until a path is found. 
+- Although this may seem inefficient and too nondeterministic, it actually works quickly (Hefty can plan a new path without noticeably stopping to recalculate) and finds a path (when one exists) on the first try almost every time.
+
+ d. Global Cost Map 
+
+- The global navigation is used to create paths for a goal in the map or a far-off distance.
+- The global costmap is used for the global navigation
+
+ e. Local Cost Map 
+
+- The local navigation is used to create paths in the nearby distances and avoid obstacles.
+- The local costmap is used for the local navigation.
+
+ f. Obstacle Inflation
+
+- To this end, the purpose of obstacle inflation is to make obstacles appear larger than they are, and with a safety margin, to help ensure the robot does not collide with them. 
+-  During path planning, the robot footprint (in red) should not be made to overlap significantly with those inflated areas.
+
+ g. Occupancy Threshold
+THRESHOLD is an optional parameter specifying the limits for the percentages of space used on the volume. specifies the limit (high threshold) for the percentage of occupied space you want on a volume.
